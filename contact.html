@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Contact - [Artist Name]</title>
+    <title>Contact - Anu Choudhary</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-900 text-white min-h-screen flex flex-col">
@@ -47,19 +47,34 @@
           />
         </div>
 
-        <div class="mb-4">
-          <label for="email" class="block text-yellow-300 font-semibold mb-2"
-            >Email:</label
-          >
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-700 text-white placeholder-yellow-300 focus:outline-yellow-400"
-            placeholder="your.email@example.com"
-          />
-        </div>
+        <!-- PHONE INPUT -->
+<div class="mb-4">
+  <label for="phone" class="block text-yellow-300 font-semibold mb-2">Phone:</label>
+  <input
+    id="phone"
+    name="phone"
+    type="tel"
+    required
+    pattern="^\d{3}[-]?\d{3}[-]?\d{4}$"
+    title="Please enter a valid phone number (e.g., 516-123-4567)"
+    class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-700 text-white placeholder-yellow-300 focus:outline-yellow-400"
+    placeholder="516-123-4567"
+  />
+</div>
+
+<!-- EMAIL INPUT -->
+<div class="mb-4">
+  <label for="email" class="block text-yellow-300 font-semibold mb-2">Email:</label>
+  <input
+    id="email"
+    name="email"
+    type="email"
+    required
+    title="Please enter a valid email address"
+    class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-700 text-white placeholder-yellow-300 focus:outline-yellow-400"
+    placeholder="your.email@example.com"
+  />
+</div>
 
         <div class="mb-4">
           <label for="message" class="block text-yellow-300 font-semibold mb-2"
@@ -87,7 +102,7 @@
     </main>
 
     <footer class="bg-black bg-opacity-60 text-center p-4 text-gray-300 mt-10">
-      &copy; 2025 [Artist Name]. All rights reserved.
+      &copy; 2025 Anu Choudhary. All rights reserved.
     </footer>
   </body>
 </html>
