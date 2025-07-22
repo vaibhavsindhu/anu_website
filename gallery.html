@@ -1,10 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Gallery - Anu Choudhary</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .active-tab {
+      border-bottom: 2px solid #facc15;
+    }
+    /* Navigation buttons */
+    .nav-btn {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #facc15; /* yellow border matching theme */
+  color: #facc15; /* yellow text */
+  font-size: 1.5rem;
+  padding: 6px 18px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 12px;
+  user-select: none;
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.7);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #facc15;
+  color: #000;
+  box-shadow: 0 0 15px #facc15;
+}
+
+  </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex flex-col">
   <header class="bg-black bg-opacity-60 p-6 fixed top-0 w-full z-10 backdrop-blur-md">
@@ -28,38 +53,42 @@
 
     <!-- Tab Content: Oil -->
     <div id="tab-oil" class="tab-content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <img src="images/oil_hut.jpeg" alt="Oil Painting" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
-      <img src="images/oil_cow.jpeg" alt="Oil Painting" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
-      <img src="images/oil_duck.jpeg" alt="Oil Painting" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
-      <img src="images/oil_dog.jpeg" alt="Oil Painting" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
-      <img src="images/oil_budha.jpeg" alt="Oil Painting" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
-      <img src="images/oil_swan.jpeg" alt="Oil Painting" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/oil_hut.jpeg" alt="Oil Painting" data-category="oil" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/oil_cow.jpeg" alt="Oil Painting" data-category="oil" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/oil_duck.jpeg" alt="Oil Painting" data-category="oil" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/oil_dog.jpeg" alt="Oil Painting" data-category="oil" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/oil_budha.jpeg" alt="Oil Painting" data-category="oil" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/oil_swan.jpeg" alt="Oil Painting" data-category="oil" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
     </div>
 
     <!-- Tab Content: Shading -->
     <div id="tab-shading" class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <img src="images/shading_horse.jpeg" alt="Shading" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
-      <img src="images/shading_man1.jpeg" alt="Shading" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
-      <img src="images/shading_man2.jpeg" alt="Shading" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/shading_horse.jpeg" alt="Shading" data-category="shading" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/shading_man1.jpeg" alt="Shading" data-category="shading" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/shading_man2.jpeg" alt="Shading" data-category="shading" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
     </div>
 
     <!-- Tab Content: Acrylic -->
     <div id="tab-acrylic" class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <img src="images/acr_swan.jpeg" alt="Acrylic" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
-      <img src="images/arc_peacock.jpeg" alt="Acrylic" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
-      <img src="images/acr_flower_2.jpeg" alt="Acrylic" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
-      <img src="images/arc_flower.jpeg" alt="Acrylic" onclick="openLightbox(this.src)" class="cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/acr_swan.jpeg" alt="Acrylic" data-category="acrylic" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/arc_peacock.jpeg" alt="Acrylic" data-category="acrylic" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/acr_flower_2.jpeg" alt="Acrylic" data-category="acrylic" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
+      <img src="images/arc_flower.jpeg" alt="Acrylic" data-category="acrylic" class="gallery-img cursor-pointer rounded shadow hover:scale-105 transition-transform duration-300" />
     </div>
   </main>
 
   <!-- Lightbox Modal -->
   <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50" onclick="closeLightbox(event)">
+    <div><button class="nav-btn" id="prev-btn">&#8592;</button></div>
     <div class="relative w-fit">
-  <button onclick="closeLightbox(event)" class="absolute -top-4 -right-4 bg-white text-black rounded-full text-2xl w-10 h-10 flex items-center justify-center font-bold hover:bg-yellow-400 hover:text-black z-50">
-    &times;
-  </button>
-  <img id="lightbox-img" src="" alt="Full View" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-lg" />
-</div>
+      <button onclick="closeLightbox(event)" class="absolute -top-4 -right-4 bg-white text-black rounded-full text-2xl w-10 h-10 flex items-center justify-center font-bold hover:bg-yellow-400 hover:text-black z-50">
+        &times;
+      </button>
+      <img id="lightbox-img" src="" alt="Full View" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-lg" />
+    </div>
+    <div>
+      <button class="nav-btn" id="next-btn">&#8594;</button>
+    </div>
   </div>
 
   <footer class="bg-black bg-opacity-60 text-center p-4 text-gray-300 mt-12">
@@ -67,6 +96,7 @@
   </footer>
 
   <script>
+    // Tab switching
     function showTab(tabName, buttonElement) {
       const tabs = document.querySelectorAll(".tab-content");
       tabs.forEach((tab) => tab.classList.add("hidden"));
@@ -77,25 +107,98 @@
       buttonElement.classList.add("active-tab", "text-yellow-400");
     }
 
+    // Variables for lightbox
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-img");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    let currentIndex = 0;
+    let currentCategory = "oil";
+    let currentGalleryImages = [];
+
+    // Open lightbox and setup gallery images of current tab
     function openLightbox(src) {
-      const lightbox = document.getElementById("lightbox");
-      const img = document.getElementById("lightbox-img");
-      img.src = src;
+      // Determine current category from visible tab
+      const visibleTab = document.querySelector(".tab-content:not(.hidden)");
+      currentCategory = visibleTab.id.replace("tab-", "");
+
+      // Get all images of current category
+      currentGalleryImages = Array.from(visibleTab.querySelectorAll("img"));
+
+      // Find index of clicked image
+      currentIndex = currentGalleryImages.findIndex(img => img.src === src);
+
+      if (currentIndex === -1) currentIndex = 0;
+
+      showImage();
       lightbox.classList.remove("hidden");
     }
 
-    function closeLightbox(event) {
-      const img = document.getElementById("lightbox-img");
-      if (!img.contains(event.target)) {
-        document.getElementById("lightbox").classList.add("hidden");
-      }
+    // Show image by currentIndex
+    function showImage() {
+      lightboxImage.src = currentGalleryImages[currentIndex].src;
     }
-  </script>
 
-  <style>
-    .active-tab {
-      border-bottom: 2px solid #facc15;
+    // Close lightbox on background or close button click
+    function closeLightbox(event) {
+      // Prevent closing when clicking image or nav buttons
+      if (
+        event.target === lightboxImage ||
+        event.target === prevBtn ||
+        event.target === nextBtn
+      ) return;
+
+      lightbox.classList.add("hidden");
     }
-  </style>
+
+    // Navigate to next image
+    function showNext() {
+      currentIndex = (currentIndex + 1) % currentGalleryImages.length;
+      showImage();
+    }
+
+    // Navigate to previous image
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+      showImage();
+    }
+
+    // Event listeners
+    prevBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      showPrev();
+    });
+    nextBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      showNext();
+    });
+
+    // Close lightbox when clicking outside the image or buttons
+    lightbox.addEventListener("click", closeLightbox);
+
+    // Keyboard navigation for lightbox
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.classList.contains("hidden")) return;
+
+      if (e.key === "ArrowRight") {
+        showNext();
+      } else if (e.key === "ArrowLeft") {
+        showPrev();
+      } else if (e.key === "Escape") {
+        lightbox.classList.add("hidden");
+      }
+    });
+
+    // Attach openLightbox to all gallery images dynamically (for initial load and tab switch)
+    function attachImageClickHandlers() {
+      const allGalleryImages = document.querySelectorAll(".gallery-img");
+      allGalleryImages.forEach(img => {
+        img.onclick = () => openLightbox(img.src);
+      });
+    }
+
+    attachImageClickHandlers();
+  </script>
 </body>
 </html>
